@@ -13,11 +13,12 @@ const Notes = ({notes}) => {
 
   const handleSearch = () => {
     setFilteredNotes(notes.filter(note => {
-      if(note.title.toLowerCase().match(text.toLocaleLowerCase())){
-        return note;
-      }
-    }))
-  }
+      const titleMatch = note.title.toLowerCase().includes(text.toLowerCase());
+      const detailsMatch = note.details.toLowerCase().includes(text.toLowerCase());
+      return titleMatch || detailsMatch;
+    }));
+  };
+  
 
   useEffect(handleSearch, [text])
 
