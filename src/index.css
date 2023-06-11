@@ -118,7 +118,7 @@ h2 {
 }
 
 .note {
-    background: var(--color-primary);
+    background: transparent;
     padding: 1rem;
     display: flex;
     flex-direction: column;
